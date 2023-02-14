@@ -488,7 +488,7 @@ class Concrete extends DataObject implements LazyLoadedFieldsInterface
     {
         $parent = $this->getNextParentForInheritance();
         if ($parent) {
-            $method = 'get' . $key;
+            $method = 'get' . ucfirst($key);
             if (method_exists($parent, $method)) {
                 return $parent->$method($params);
             }
